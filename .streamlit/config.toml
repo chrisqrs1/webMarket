@@ -1,10 +1,4 @@
-
 [theme]
 base="light"
-primaryColor="darkorange"
-backgroundColor="navy"
-secondaryBackgroundColor="darkgreen"
-textColor="white"
-font="sans serif"
-
-
+backgroundColor="#b2c5ae"
+secondaryBackgroundColor="#aeb7a4"
