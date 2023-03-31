@@ -24,10 +24,14 @@ def investible_strategies():
             },
         )
     fig.update_layout(
-        title='investible Strategies',
+        title_text='investible Strategies',
+        title_x = 0.5,
         xaxis=dict(title='date'),
         yaxis=dict(title='value'),
+        legend=dict(yanchor='top', y=1.1, xanchor='center', x=0.5, orientation='h',
+                    borderwidth=1, bordercolor='white', font=dict(size=12)),
     )
+
     st.plotly_chart(fig, use_container_width=True)
 
     for strategy, performance_table in performance_tables.items():
@@ -36,6 +40,15 @@ def investible_strategies():
         st.dataframe(performance_table.style.background_gradient(axis=None, cmap="RdYlGn").format(precision=2))
 
         fig = go.Figure()
-        fig.add_histogram(x=performance_table.drop('Total', axis=1).values.flatten()
+        fig.add_histogram(
+            x=performance_table.drop('Total', axis=1).values.flatten(),
+            histnorm='probability density',
+            showlegend=False,
+        )
+        fig.update_layout(
+        title_text=f'Distribution of Monthly returns (%) [{strategy}]',
+        title_x = 0.2,
+        xaxis=dict(title='monthly return (%)'),
+        yaxis=dict(title='probability density'),
         )
         st.plotly_chart(fig, use_container_width=True)

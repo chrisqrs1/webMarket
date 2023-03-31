@@ -24,10 +24,14 @@ def benchmark():
             },
         )
     fig.update_layout(
-        title='investible Strategies',
+        title_text='investible Strategies',
+        title_x = 0.5,
         xaxis=dict(title='date'),
         yaxis=dict(title='value'),
+        legend=dict(yanchor='top', y=1.1, xanchor='center', x=0.5, orientation='h',
+                    borderwidth=1, bordercolor='white', font=dict(size=12)),
     )
+
     st.plotly_chart(fig, use_container_width=True)
 
 
@@ -46,9 +50,12 @@ def benchmark():
             },
         )
     fig.update_layout(
-        title='Theoretical Break Evens on Benchmark',
+        title_text='Theoretical Break Evens on Benchmark',
+        title_x = 0.5,
         xaxis=dict(title='date'),
-        yaxis=dict(title='break even'),
+        yaxis=dict(title='value'),
+        legend=dict(yanchor='top', y=1.1, xanchor='center', x=0.5, orientation='h',
+                    borderwidth=1, bordercolor='white', font=dict(size=12)),
     )
     st.plotly_chart(fig, use_container_width=True)
 

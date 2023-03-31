@@ -48,7 +48,7 @@ def select_page():
     if page == "Home":
         st.subheader("Home Page")
         st.write("Welcome to my navigation app!")
-        logo = Image.open('/images/Logo_QRS1_VERT.jpg')
+        logo = Image.open('images/Logo_QRS1_VERT.jpg')
         st.image(logo, caption='Logo of your company', use_column_width=True)
     elif page == "Benchmark":
         logger.info(f'click on page {page}')
