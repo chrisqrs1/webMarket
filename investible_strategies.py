@@ -1,9 +1,9 @@
 import streamlit as st
 import plotly.graph_objects as go
-from utils import load_data, pathStrategies
+from utils import load_data, pathData
 
-investibleStrategies = load_data(pathStrategies, 'investibleStrategies.parquet.gzip')
-performance_tables = {strategy: load_data(pathStrategies, f'performance_table_{strategy}.parquet.gzip') for strategy in investibleStrategies.columns}
+investibleStrategies = load_data(pathData, 'investibleStrategies.parquet.gzip')
+performance_tables = {strategy: load_data(pathData, f'performance_table_{strategy}.parquet.gzip') for strategy in investibleStrategies.columns}
 
 def investible_strategies():
     st.subheader("investible strategies_page")

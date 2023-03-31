@@ -3,10 +3,10 @@ import plotly.graph_objects as go
 from pathlib import Path
 import pandas as pd
 
-from utils import load_data, pathProcessedData
+from utils import load_data, pathData
 
-option_decomposition = load_data(pathProcessedData, 'option_decomposition.parquet.gzip')
-greeks = load_data(pathProcessedData, 'greeks.parquet.gzip')
+option_decomposition = load_data(pathData, 'option_decomposition.parquet.gzip')
+greeks = load_data(pathData, 'greeks.parquet.gzip')
 
 expiration_dates = option_decomposition.index.get_level_values('expiration_date').unique().sort_values()
 expiration_dates_codes = [expiration_date.strftime('%b-%y') for expiration_date in expiration_dates]

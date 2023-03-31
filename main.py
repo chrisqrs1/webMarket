@@ -26,7 +26,7 @@ st.set_page_config(
 
 from benchmark import benchmark
 from investible_strategies import investible_strategies
-from simple_option_pnl_risks import simple_option_pnl_risks
+# from simple_option_pnl_risks import simple_option_pnl_risks
 
 def select_page():
     # Create sidebar with page options
@@ -56,9 +56,6 @@ def select_page():
     elif page == "Investible Strategies (systemtic short vol)":
         logger.info(f'click on page {page}')
         investible_strategies()
-    elif page == "Simple Option Strategy":
-        logger.info(f'click on page {page}')
-        simple_option_pnl_risks()
     else:
         logger.info(f'click on page {page}')
         st.write('not ready yet')

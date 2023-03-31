@@ -6,11 +6,9 @@ from pathlib import Path
 from PIL import Image
 import logging
 import os
+# import matplotlib
 
-
-pathStrategies = Path('/Users/christopheedlinger/OneDrive - QRS1/Data/Processed Data/VIX/Strategies/Implied Convexity')
-
-pathProcessedData = Path('/Users/christopheedlinger/OneDrive - QRS1/Data/Processed Data/VIX/processedData')
+pathData = Path('Data/Implied Convexity')
 
 @st.cache_data()
 def load_data(

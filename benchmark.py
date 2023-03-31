@@ -1,9 +1,9 @@
 import streamlit as st
 import plotly.graph_objects as go
-from utils import load_data, pathStrategies
+from utils import load_data, pathData
 
-benchmarkIndices = load_data(pathStrategies, 'benchmarks.parquet.gzip').drop('spread', axis=1)
-benchmarkBreakEvens = load_data(pathStrategies, 'benchmarkBreakEvens.parquet.gzip')
+benchmarkIndices = load_data(pathData, 'benchmarks.parquet.gzip').drop('spread', axis=1)
+benchmarkBreakEvens = load_data(pathData, 'benchmarkBreakEvens.parquet.gzip')
 
 def benchmark():
     st.subheader("Benchmark")
