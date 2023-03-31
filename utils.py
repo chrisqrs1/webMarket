@@ -6,7 +6,6 @@ from pathlib import Path
 from PIL import Image
 import logging
 import os
-from typing import Union
 
 
 pathStrategies = Path('/Users/christopheedlinger/OneDrive - QRS1/Data/Processed Data/VIX/Strategies/Implied Convexity')
@@ -29,10 +28,10 @@ def scatter_plot(df) -> go.Figure:
 
 def set_logger(
         log_directory: Path = Path("log"),
-        log_file: Union([Path, None]) = Path('logfile.log'),
+        log_file = Path('logfile.log'),
         name: str = __name__,
         file_level: int = logging.INFO,
-        console_level: Union([int, None]) = logging.INFO
+        console_level = logging.INFO
 
 ) -> logging.Logger:
 
