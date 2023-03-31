@@ -5,6 +5,7 @@ import plotly.graph_objects as go
 from pathlib import Path
 from PIL import Image
 import logging
+import os
 
 
 pathStrategies = Path('/Users/christopheedlinger/OneDrive - QRS1/Data/Processed Data/VIX/Strategies/Implied Convexity')
