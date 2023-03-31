@@ -1,4 +1,6 @@
 # App URL : chrisqrs1-webmarket-main-sa7j34 .streamlit.app -> qrs1-implied-convexity-vix.streamlit.app 
+# streamlit config show
+
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -6,6 +8,19 @@ import plotly.graph_objects as go
 from pathlib import Path
 from PIL import Image
 from utils import set_logger
+import argparse
+
+# Create the parser
+parser = argparse.ArgumentParser(description='parameters to define web app behaviour')
+
+# Define the arguments
+parser.add_argument('--underlying', type=str, default='VIX', help='underlying code')
+
+# Parse the arguments
+args = parser.parse_args()
+
+underlying = args.underlying
+
 
 logger = set_logger(
     log_directory='/log',
@@ -48,7 +63,7 @@ def select_page():
 
     if page == "Home":
         st.subheader("Home Page")
-        st.write("Welcome to my navigation app!")
+        st.write(f"QRS1 page dedicated to VIX strategies")
         logo = Image.open('images/Logo_QRS1_VERT.jpg')
         st.image(logo, caption='Logo of your company', use_column_width=True)
     elif page == "Benchmark":
